@@ -1,0 +1,606 @@
+@import url('./components/walktask.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+ul li{
+    list-style: none;
+}
+
+body {
+    line-height: 1.6;
+    color: #333; /* Black from logo */
+    background-color: #f5f7fa; /* Light gray background for contrast */
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001; /* Increased z-index to ensure header stays above blog posts */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.header-logo {
+    height: 80px; /* Adjust as needed for your logo */
+    width: auto;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #ff4500; /* Orange from logo for hover */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 1002; /* Ensure it's above the header and blog posts */
+    padding: 0.5rem; /* Add padding for better touch target */
+    background-color: #fff; /* Ensure background contrasts with header */
+}
+
+.menu-toggle i {
+    transition: transform 0.3s; /* Smooth transition for icon rotation */
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Ensure it's below the menu-toggle but above content */
+}
+
+.nav-links.active li {
+    margin: 0.5rem 0;
+}
+
+.nav-links.active li a {
+    color: #333;
+}
+
+.nav-links.active li a:hover {
+    color: #ff4500;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('images/hero-img.png'); /* Replace with generated image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 152, 219, 0.5); /* Semi-transparent blue overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #ff4500; /* Orange from logo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 200px; /* Minimum width for better touch targets on mobile */
+}
+
+.cta-button:hover {
+    background-color: #e63e00; /* Darker orange */
+}
+
+/* Services Section */
+.services {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: #ffffff; /* White background for contrast */
+}
+
+.services h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    background-color: #f5f7fa; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid #2ecc71; /* Green border for accent */
+}
+
+.service-box i {
+    font-size: 2rem;
+    color: #ff4500; /* Orange from logo */
+    margin-bottom: 1rem;
+}
+
+.service-box h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Blog Section */
+.blog-content { /* Renamed from "blogs" to "blog-content" to avoid conflicts */
+    padding: 8rem 5% 4rem; /* Increased top padding to 8rem to ensure no overlap with fixed header, kept bottom padding */
+    text-align: center;
+    background-color: #e8f5e9; /* Light green background */
+    margin-top: 4.5rem;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 2px solid #3498db; /* Blue border for accent */
+    padding-bottom: 1rem; /* Space for the "Read More" button */
+}
+
+.blogs {
+    padding: 6rem 5% 4rem; /* Increased top padding to avoid overlap with fixed header, kept bottom padding */
+    text-align: center;
+    background-color: #e8f5e9; /* Light green background */
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-post h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.blog-post h3 a:hover {
+    color: #ff4500; /* Orange from logo */
+}
+
+.blog-post p {
+    padding: 1rem;
+    color: #666;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff4500; /* Orange from logo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+    min-width: 120px; /* Minimum width for better touch targets on mobile */
+    text-align: center;
+}
+
+.read-more-btn:hover {
+    background-color: #e63e00; /* Darker orange */
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Black from logo */
+    color: #fff;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo-img {
+    height: 80px; /* Matches header logo size */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-links li a:hover {
+    color: #2ecc71; /* Green from logo */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        padding: 0.8rem; /* Larger padding on mobile for better touch target */
+        background-color: #fff; /* Ensure background contrasts with header */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-logo {
+        height: 60px; /* Slightly smaller on mobile */
+        width: auto;
+    }
+
+    .footer-logo-img {
+        height: 60px; /* Matches mobile header logo size */
+        width: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button, .read-more-btn {
+        width: 50%; /* Full width on mobile for better touch targets */
+        padding: 1rem; /* Increased padding for larger touch areas */
+        font-size: 1rem; /* Ensure readability */
+    }
+
+    .service-container, .blog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box, .blog-post {
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+
+    .blogs {
+        padding: 4rem 5% 2rem; /* Reduced top padding on mobile for better fit */
+    }
+
+    .blog-content { /* Updated for the renamed class */
+        padding: 6rem 5% 2rem; /* Reduced top padding on mobile for better fit, kept side padding */
+    }
+
+    .blog-container {
+        gap: 2rem; /* Reduced gap on mobile for better fit */
+    }
+}
+
+/* Contact Page Specific Styles */
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form h2, .contact-info h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-info a {
+    color: #ff4500; /* Orange from logo for the icon */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #e63e00; /* Darker orange on hover */
+}
+
+.contact-info a i {
+    font-size: 1.5rem; /* Larger icon for visibility */
+    margin-right: 0.5rem; /* Space between icon and text (if added later) */
+}
+
+/* Remove social-links styles (no longer needed) */
+.social-links {
+    display: none; /* Ensure these styles don’t interfere */
+}
+
+/**/
+/* components/walktask.css */
+
+/* Main Content Wrapper and Sidebar Layout */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding-right: 20px; /* Space for sidebar */
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px; /* Space for fixed header */
+}
+
+section {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 1rem; /* Space after header */
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2ecc71; /* Green from logo */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Button Styling for Anchor Tags */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a.join-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff4500; /* Orange from logo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 120px;
+    text-align: center;
+}
+
+a.join-btn:hover {
+    background-color: #e63e00; /* Darker orange */
+}
+
+/* Specific Section Styling */
+#introduction, #conclusion, #get-started {
+    background-color: #e8f5e9; /* Light green background */
+    border: 2px solid #3498db; /* Blue border */
+}
+
+#screenshots ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 25%;
+    min-width: 200px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 120px; /* Below header and some padding */
+    height: fit-content;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2ecc71;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+    color: #ff4500;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .content-wrapper {
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin-top: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    a.join-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    section {
+        margin: 1rem;
+    }
+}

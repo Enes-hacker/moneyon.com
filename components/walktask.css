@@ -1,0 +1,101 @@
+/* components/walktask.css */
+
+/* Main Content Adjustments */
+main {
+    margin-inline: 1.25rem;
+    margin-top: 100px; /* Space for fixed header */
+}
+
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2ecc71; /* Green from logo */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Button Styling for Anchor Tags */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a.join-btn, a[href*="apps.apple.com"], a[href*="play.google.com"] {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff4500; /* Orange from logo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 120px;
+    text-align: center;
+}
+
+a.join-btn:hover, a[href*="apps.apple.com"]:hover, a[href*="play.google.com"]:hover {
+    background-color: #e63e00; /* Darker orange */
+}
+
+/* Specific Section Styling */
+#introduction, #conclusion, #get-started {
+    background-color: #e8f5e9; /* Light green background */
+    border: 2px solid #3498db; /* Blue border */
+}
+
+#screenshots ul li {
+    margin-bottom: 0.5rem;
+}
+
+#get-started ul li{
+    margin-top: 1rem;
+    list-style: none;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    a.join-btn, a[href*="apps.apple.com"], a[href*="play.google.com"] {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    section {
+        margin: 1rem auto;
+    }
+}
