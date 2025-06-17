@@ -1,0 +1,166 @@
+/* components/surveys.css */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 20px;
+}
+
+.content-wrapper h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.intro-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper h2 {
+    font-size: 1.8rem;
+    color: #2ecc71;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.content-wrapper p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#survey-reviews .survey-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#survey-reviews .survey-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+#survey-reviews .survey-item h3 {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-bottom: 0.5rem;
+}
+
+#survey-reviews .survey-item p {
+    margin-bottom: 1rem;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #2980b9;
+}
+
+.join-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #27ae60;
+}
+
+.join-btn i {
+    margin-left: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    min-width: 200px;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2ecc71;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+    color: #ff4500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .content-wrapper {
+        padding: 0 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .intro-img {
+        margin-bottom: 1rem;
+    }
+
+    .join-btn {
+        display: block;
+        margin-top: 0.5rem;
+    }
+}
